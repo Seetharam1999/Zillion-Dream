@@ -37,3 +37,56 @@
     transform: translateY(0px);
   }
 }
+
+
+.Contacts{
+
+  background: linear-gradient(to right ,rgb(171 153 232),rgb(134 11 156));
+  display: flex;
+  flex-grow: 1;
+  position: relative;
+  justify-content: space-between;
+  color:#5e0775;
+  
+
+}
+.left{
+
+  margin: 10px;
+}
+.right{
+  margin: 10px;
+}
+.Conatacts-Body{
+
+  display: flex;
+  flex-grow: 1;
+  position: relative;
+  justify-content: space-between;
+  padding: 15px;
+  color:#5e0775;
+
+}
+.Conatacts-Body p{
+  margin-bottom: 0px;
+}
+.image{
+  border-radius: 50%;
+}
+.grp{
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  position: relative
+
+}
+.grups{
+  border-radius: 50%;
+  border: 1px dotted #5e0775;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  margin-top:-35px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
