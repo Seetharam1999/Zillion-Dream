@@ -1,0 +1,99 @@
+
+.Contacts{
+
+    background: linear-gradient(to right ,rgba(169,28,249,100),rgba(114,1,200,100));
+    display: flex;
+    flex-grow: 1;
+    border-radius: 10px 10px 0px 0px / 10px 10px 0px 0px;
+    position: relative;
+    justify-content: space-between;
+    color:#5e0775;
+    
+  
+  }
+  .left{
+  
+    margin: 10px;
+  }
+  .right{
+    margin: 10px;
+  }
+  .Conatacts-Body{
+  
+    display: flex;
+    flex-grow: 1;
+    position: relative;
+    justify-content: space-between;
+    padding: 15px;
+    color:#5e0775;
+  
+  }
+  .active-tabs{
+    color: black;
+    border-bottom:1px solid transparent;
+  }
+  .active-tabs:before{
+    content: "";
+    display: block;
+    position:absolute;
+    transform: translate3d(-50%);
+    
+    height: 5px;
+    background: slategray;
+  }
+  .image{
+    border-radius: 50%;
+  }
+  .grp{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    position: relative
+  
+  }
+  .grups{
+    border-radius: 50%;
+    border: 1px dotted #5e0775;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    margin-top:-35px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+  }
+.tab-indicator {
+    position:relative;
+
+    width:calc(100% / 10);
+    height:10px;
+    background:#5e0775;
+    left:calc(calc(100% / 10)*0.01);
+    border-radius:10px;
+    transition:all 500ms ease-in-out;
+  }
+ 
+  .list-group-item.active{
+    background: #5e0775;}
+    .option{
+      padding: 9px 0;
+      background-color: #e6e4e4;
+      border-radius: 3px;
+      box-shadow: 0 2px 5px 0 rgba(var(--shadow-rgb),.26),0 2px 10px 0 rgba(var(--shadow-rgb),.16);
+    }
+    .option::before{
+    
+      position: absolute;
+      border: 1px solid;
+      transform: all 500ms ease-in-out;
+    }
+  
+    ul{
+      padding-left: 0rem;
+      list-style: none;
+     padding: 0.5rem;
+     text-align: start;
+    }
+    ul li:hover{
+      background-color: #5e0775;
+      color: white;
+    }

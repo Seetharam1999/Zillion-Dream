@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from './ZD.jpg';
-import Contact from './Components/Contact_Components';
+import Contact from './Components/ContactComponents/Contact_Components';
 import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import {

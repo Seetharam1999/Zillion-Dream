@@ -48,15 +48,16 @@ export class ChatListItems extends Component {
           isOnline={this.props.isOnline}
         />
 
-        <div className="userMeta">
+<div className="userMeta">
+
          <div className="user_">
              <p>{this.props.name}</p>
-                <span className={`fa ${this.props.calllog=='income'?"fa-arrow-left":this.props.calllog=='outgoing'?"fa-arrow-right":"fa-arrow-left"} icons_${this.props.calllog}` }>
-              9 july,8.26pm
-                </span>
-               
-                         </div>
-          <span className="activeTime fa fa-phone"></span>
+             <p>this is last messages</p>
+         </div>
+        
+         
+          <span className="badge badge-primary badge-pill">14
+          <span className="activeTime">32 mins ago</span></span>
         </div>
       </div>
     );
@@ -64,7 +65,7 @@ export class ChatListItems extends Component {
 }
 
 
-export default class Call extends Component {
+export default class Chat extends Component {
   allChatUsers = [
     {
       image:
@@ -73,7 +74,6 @@ export default class Call extends Component {
       name: "Tim Hover",
       active: true,
       isOnline: true,
-      calllog:'income'
     },
     {
       image:
@@ -82,7 +82,6 @@ export default class Call extends Component {
       name: "Ayub Rossi",
       active: false,
       isOnline: false,
-      calllog:'outgoing'
     },
     {
       image:
@@ -91,7 +90,6 @@ export default class Call extends Component {
       name: "Hamaad Dejesus",
       active: false,
       isOnline: false,
-      calllog:'missed'
     },
     {
       image:
@@ -100,7 +98,6 @@ export default class Call extends Component {
       name: "Eleni Hobbs",
       active: false,
       isOnline: true,
-      calllog:'income'
     },
     {
       image:
@@ -109,7 +106,6 @@ export default class Call extends Component {
       name: "Elsa Black",
       active: false,
       isOnline: false,
-      calllog:'outgoing'
     },
     {
       image:
@@ -118,7 +114,6 @@ export default class Call extends Component {
       name: "Kayley Mellor",
       active: false,
       isOnline: true,
-      calllog:'income'
     },
     {
       image:
@@ -127,7 +122,6 @@ export default class Call extends Component {
       name: "Hasan Mcculloch",
       active: false,
       isOnline: true,
-      calllog:'income'
     },
     {
       image:
@@ -136,7 +130,6 @@ export default class Call extends Component {
       name: "Autumn Mckee",
       active: false,
       isOnline: false,
-      calllog:'missed'
     },
     {
       image:
@@ -145,7 +138,6 @@ export default class Call extends Component {
       name: "Allen Woodley",
       active: false,
       isOnline: true,
-      calllog:'income'
     },
     {
       image: "https://pbs.twimg.com/profile_images/770394499/female.png",
@@ -153,14 +145,13 @@ export default class Call extends Component {
       name: "Manpreet David",
       active: false,
       isOnline: true,
-      calllog:'income'
     },
   ];
   constructor(props) {
     super(props);
     this.state = {
       allChats: this.allChatUsers,
-    isLoading:true
+    isLoading:props.loading
     };
     setTimeout(()=>{
 this.setState({
@@ -186,8 +177,7 @@ this.setState({
                 active={item.active ? "active" : ""}
                 isOnline={item.isOnline ? "active" : ""}
                 image={item.image}
-                calllog={item.calllog}
-                />
+              />
             );
           })}
         </div>

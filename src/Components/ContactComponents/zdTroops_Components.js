@@ -1,5 +1,5 @@
 import React,{ Component} from 'react';
-
+import "./chatList.css";
 import SkeletonComponent from "./skeleton._Component";
 
 
@@ -18,7 +18,7 @@ import SkeletonComponent from "./skeleton._Component";
     }
     render()
     {
-        return(<div>
+        return(  <div className="chatlist__items">
             {this.state.isLoading?
             <SkeletonComponent groups={true}/>:
             <p>ZD TroopsS</p>}

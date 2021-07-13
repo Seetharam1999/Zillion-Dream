@@ -21,22 +21,13 @@ export class ChatListItems extends Component {
   constructor(props) {
     super(props);
   }
-  selectChat = (e) => {
-    for (
-      let index = 0;
-      index < e.currentTarget.parentNode.children.length;
-      index++
-    ) {
-      e.currentTarget.parentNode.children[index].classList.remove("active");
-    }
-    e.currentTarget.classList.add("active");
-  };
+
 
   render() {
     return (
       <div
         style={{ animationDelay: `0.${this.props.animationDelay}s` }}
-        onClick={this.selectChat}
+        
         className={`chatlist__item ${
           this.props.active ? this.props.active : ""
         } `}
@@ -51,9 +42,12 @@ export class ChatListItems extends Component {
         <div className="userMeta">
          <div className="user_">
              <p>{this.props.name}</p>
-             <p>this is last messages</p>
-         </div>
-          <span className="activeTime">32 mins ago</span>
+                <span className={`fa ${this.props.calllog=='income'?"fa-arrow-left":this.props.calllog=='outgoing'?"fa-arrow-right":"fa-arrow-left"} icons_${this.props.calllog}` }>
+              9 july,8.26pm
+                </span>
+               
+                         </div>
+          <span className="activeTime fa fa-phone"></span>
         </div>
       </div>
     );
@@ -61,7 +55,7 @@ export class ChatListItems extends Component {
 }
 
 
-export default class Chat extends Component {
+export default class Call extends Component {
   allChatUsers = [
     {
       image:
@@ -70,6 +64,7 @@ export default class Chat extends Component {
       name: "Tim Hover",
       active: true,
       isOnline: true,
+      calllog:'income'
     },
     {
       image:
@@ -78,6 +73,7 @@ export default class Chat extends Component {
       name: "Ayub Rossi",
       active: false,
       isOnline: false,
+      calllog:'outgoing'
     },
     {
       image:
@@ -86,6 +82,7 @@ export default class Chat extends Component {
       name: "Hamaad Dejesus",
       active: false,
       isOnline: false,
+      calllog:'missed'
     },
     {
       image:
@@ -94,6 +91,7 @@ export default class Chat extends Component {
       name: "Eleni Hobbs",
       active: false,
       isOnline: true,
+      calllog:'income'
     },
     {
       image:
@@ -102,6 +100,7 @@ export default class Chat extends Component {
       name: "Elsa Black",
       active: false,
       isOnline: false,
+      calllog:'outgoing'
     },
     {
       image:
@@ -110,6 +109,7 @@ export default class Chat extends Component {
       name: "Kayley Mellor",
       active: false,
       isOnline: true,
+      calllog:'income'
     },
     {
       image:
@@ -118,6 +118,7 @@ export default class Chat extends Component {
       name: "Hasan Mcculloch",
       active: false,
       isOnline: true,
+      calllog:'income'
     },
     {
       image:
@@ -126,6 +127,7 @@ export default class Chat extends Component {
       name: "Autumn Mckee",
       active: false,
       isOnline: false,
+      calllog:'missed'
     },
     {
       image:
@@ -134,6 +136,7 @@ export default class Chat extends Component {
       name: "Allen Woodley",
       active: false,
       isOnline: true,
+      calllog:'income'
     },
     {
       image: "https://pbs.twimg.com/profile_images/770394499/female.png",
@@ -141,6 +144,7 @@ export default class Chat extends Component {
       name: "Manpreet David",
       active: false,
       isOnline: true,
+      calllog:'income'
     },
   ];
   constructor(props) {
@@ -173,7 +177,8 @@ this.setState({
                 active={item.active ? "active" : ""}
                 isOnline={item.isOnline ? "active" : ""}
                 image={item.image}
-              />
+                calllog={item.calllog}
+                />
             );
           })}
         </div>
